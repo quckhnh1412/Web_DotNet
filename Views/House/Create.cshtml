@@ -1,0 +1,215 @@
+﻿@model HouseBuying.Models.House
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>House</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bedrooms" class="control-label"></label>
+                <input asp-for="Bedrooms" class="form-control" />
+                <span asp-validation-for="Bedrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bathrooms" class="control-label"></label>
+                <input asp-for="Bathrooms" class="form-control" />
+                <span asp-validation-for="Bathrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <!-- Province Dropdown -->
+            <div class="form-group">
+                <label>Tỉnh/Thành phố:</label>
+                <select id="province" class="form-control">
+                    <option value="">Chọn tỉnh/thành phố</option>
+                    @foreach (var province in ViewBag.Provinces)
+                    {
+                        <option value="@province">@province</option>
+                    }
+                </select>
+            </div>
+
+            <!-- District Dropdown -->
+            <div class="form-group">
+                <label>Huyện/Quận:</label>
+                <select id="district" class="form-control">
+                    <option value="">Chọn huyện/quận</option>
+                </select>
+            </div>
+
+            <!-- Ward Dropdown -->
+            <div class="form-group">
+                <label>Xã/Phường:</label>
+                <select id="ward" class="form-control">
+                    <option value="">Chọn xã/phường</option>
+                </select>
+            </div>
+
+            <!-- Street Dropdown -->
+            <div class="form-group">
+                <label>Đường:</label>
+                <select id="street" class="form-control">
+                    <option value="">Chọn đường</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+
+                <select asp-for="AddressId" class="form-control" asp-items="ViewBag.AddressId"></select>
+                <span asp-validation-for="AddressId" class="text-danger"></span>
+                
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    
+ 
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+ 
+    $(document).ready(function () {
+        $('#province').change(function () {
+            var province = $(this).val();
+            loadDistricts(province);
+        });
+
+        $('#district').change(function () {
+            var province = $('#province').val();
+            var district = $(this).val();
+            loadWards(province, district);
+        });
+
+        $('#ward').change(function () {
+            var province = $('#province').val();
+            var district = $('#district').val();
+            var ward = $(this).val();
+            loadStreets(province, district, ward);
+        });
+        $('#street').change(function () {
+            var province = $('#province').val();
+            var district = $('#district').val();
+            var ward = $('#ward').val();
+            var street = $(this).val();
+            var id = loadID(province, district, ward, street);
+            $('#AddressId').val(id);
+        });
+        function loadDistricts(province) {
+            $.ajax({
+                url: '/House/GetDistricts',
+                type: 'GET',
+                data: { province: province },
+                success: function (data) {
+                    $('#district').empty();
+                    $('#ward').empty();
+                    $('#street').empty();
+                    $('#district').append($('<option>', {
+                        value: '',
+                        text: 'Chọn huyện/quận'
+                    }));
+                    $.each(data, function (i, item) {
+                        $('#district').append($('<option>', {
+                            value: item,
+                            text: item
+                        }));
+                    });
+                }
+            });
+        }
+
+        function loadWards(province, district) {
+            $.ajax({
+                url: '/House/GetWards',
+                type: 'GET',
+                data: { province: province, district: district },
+                success: function (data) {
+                    $('#ward').empty();
+                    $('#street').empty();
+                    $('#ward').append($('<option>', {
+                        value: '',
+                        text: 'Chọn xã/phường'
+                    }));
+                    $.each(data, function (i, item) {
+                        $('#ward').append($('<option>', {
+                            value: item,
+                            text: item
+                        }));
+                    });
+                }
+            });
+        }
+
+        function loadStreets(province, district, ward) {
+            $.ajax({
+                url: '/House/GetStreets',
+                type: 'GET',
+                data: { province: province, district: district, ward: ward },
+                success: function (data) {
+                    $('#street').empty();
+                    $('#street').append($('<option>', {
+                        value: '',
+                        text: 'Chọn đường'
+                    }));
+                    $.each(data, function (i, item) {
+                        $('#street').append($('<option>', {
+                            value: item,
+                            text: item
+                        }));
+                    });
+                }
+            });
+        }
+        function loadID(province, district, ward, street) {
+            $.ajax({
+                url: '/House/GetAddressId',
+                type: 'GET',
+                data: { province: province, district: district, ward: ward, street: street },
+                success: function (data) {
+                    // Assuming data is the ID of the selected address
+                    $('#AddressId').val(data);
+                }
+            });
+        }
+    });
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
