@@ -21,6 +21,9 @@ namespace HouseBuying.Models
         public int Bathrooms { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Please enter a value greater than 0")]
+        public int Squarefoot { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a value greater than 0")]
         public decimal Price { get; set; }
 
         [Required]

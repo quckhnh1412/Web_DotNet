@@ -11466,11 +11466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\HouseBuying\\HouseBuying.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Downloads\\52000771_52000845_finalproject\\52000771_52000845_finalproject\\HouseBuying\\HouseBuying.csproj",
       "projectName": "HouseBuying",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\HouseBuying\\HouseBuying.csproj",
+      "projectPath": "C:\\Users\\HP\\Downloads\\52000771_52000845_finalproject\\52000771_52000845_finalproject\\HouseBuying\\HouseBuying.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\HouseBuying\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Downloads\\52000771_52000845_finalproject\\52000771_52000845_finalproject\\HouseBuying\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

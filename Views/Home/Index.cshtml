@@ -5,74 +5,202 @@
     ViewData["Title"] = "List of Houses";
 }
 
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-12">
-                        <div class="card-header text-white bg-info">
-                            <p class="card-text">
-                                <h5 class="card-title">
-                                    @item.Title
-                                    
-                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Id">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                        </svg>
-                                    </a>
-                                </h5>
-                            </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Site</title>
+    
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+
+    <!-- carousel  -->
+    <div id="carouselExampleDark"
+         class="carousel carousel-dark slide"
+         data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"></button>
+            <button type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://storage.googleapis.com/theme-vessel-items/checking-sites/housy-html/HTML/img/banner/banner-4.jpg"
+                     class="d-block w-100"
+                     alt="..." />
+                <div class="carousel-caption d-flex text-center h-100">
+                    <div class="container caption-info d-none d-md-block text-white">
+                        <h1>SMART HOME</h1>
+                        <p>
+                            Some representative placeholder content for the first slide.
+                        </p>
+                        <div class="btn-section text-white">
+                            <a href="#" class="btn btn-lg btn-theme">Get Started Now</a>
+                            <a href="#" class="btn btn-lg btn-white-lg-outline">Learn More</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="@Url.Content("~/Images/" + item.ImageURL)" width="100%" alt="@item.Title">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>Address: </b>@item.Address.Street, @item.Address.Ward, @item.Address.District, @item.Address.Province </p>
-                            <p class="card-text"><b>Bedrooms: </b>@item.Bedrooms</p>
-                            <p class="card-text"><b>Bathrooms: </b>@item.Bathrooms</p>
-                            <p class="card-text"><b>Price: </b>@item.Price.ToString("c")</p>
-                            <p>
-                                <b>Status:  </b>
-                                @if (@item.Status == "SOLD")
-                                {
-                                    <span class="badge bg-danger text-white">SOLD</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-success text-white">AVAILABLE</span>
-                                }
-                            </p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://storage.googleapis.com/theme-vessel-items/checking-sites/housy-html/HTML/img/banner/banner-5.jpg"
+                     class="d-block w-100"
+                     alt="..." />
+                <div class="carousel-caption d-flex text-center h-100">
+                    <div class="container caption-info d-none d-md-block text-white">
+                        <h1>SMART HOME</h1>
+                        <p>
+                            Some representative placeholder content for the first slide.
+                        </p>
+                        <div class="btn-section text-white">
+                            <a href="#" class="btn btn-lg btn-theme">Get Started Now</a>
+                            <a href="#" class="btn btn-lg btn-white-lg-outline">Learn More</a>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="card-footer">
-                            <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" asp-action="Detail" asp-route-id="@item.Id">
-                                    <i class="bi bi-eye-fill"></i> Show Details
-                                </a>
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    <!-- Assuming there's a controller named 'Orders' with an action named 'AddItemToShoppingCart' -->
-                                    <a class="btn btn-success text-white"
-                                       asp-controller="Orders"
-                                       asp-action="AddItemToShoppingCart"
-                                       asp-route-id="@item.Id">
-                                        <i class="bi bi-cart-plus"></i> Add to Cart
-                                    </a>
-                                }
-                                
-                            </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://storage.googleapis.com/theme-vessel-items/checking-sites/housy-html/HTML/img/banner/banner-2.jpg"
+                     class="d-block w-100"
+                     alt="..." />
+                <div class="carousel-caption d-flex text-center h-100">
+                    <div class="container caption-info d-none d-md-block text-white">
+                        <h1>SMART HOME</h1>
+                        <p>
+                            Some representative placeholder content for the first slide.
+                        </p>
+                        <div class="btn-section text-white">
+                            <a href="#" class="btn btn-lg btn-theme">Get Started Now</a>
+                            <a href="#" class="btn btn-lg btn-white-lg-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    }
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- house  -->
+
+    <div class="house-list container">
+        <h1 class="text-center my-4">Most Searched Homes</h1>
+
+        <div class="container list-item">
+            <div class="row product-list" id="productItem">
+                @foreach(var item in Model)
+                {
+                    <div class="item col-lg-4 col-md-6 col-sm-12 my-4">
+                        <div class="card item-content">
+
+                            <img src="@Url.Content("~/Images/" + item.ImageURL)"
+                                 class="card-img-top"
+                                 alt="@item.Title" 
+                                 style="max-height:265px"/>
+                            <div class="card-body">
+                                <div class="card-star-status d-flex justify-content-between">
+                                    <div class="item-star text-warning mb-3">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="status">STATUS:
+                                        @if (@item.Status == "SOLD")
+                                        {
+                                            <span class="badge bg-danger text-white">SOLD</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success text-white">AVAILABLE</span>
+                                        }
+                                        
+                                </div>
+
+                                <div class="item-title d-flex justify-content-between align-items-center">
+                                    <div class="card-title-div">
+                                        <h3 class="card-title d-inline">@item.Title</h3>
+                                        <a class="text-black float-right" asp-action="Edit" asp-route-id="@item.Id">
+                                            <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    <p class="card-des mb-2 price">@item.Price.ToString("c")</p>
+                                </div>
+                                <div class="item-address">
+                                    <p>
+                                        <i class="fa fa-map-marker-alt ms-1"></i>@item.Address.Street, @item.Address.Ward, @item.Address.District, @item.Address.Province
+                                    </p>
+                                </div>
+                                <div class="item-info">
+                                    <ul class="d-flex details justify-content-between">
+                                        <li>
+                                            <i class="fa fa-bed"></i>
+                                            @item.Bedrooms Beds
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-bath"></i>
+                                            @item.Bathrooms Baths
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-building"></i>
+                                            @item.Squarefoot Sqft
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="button-card d-flex justify-content-evenly">
+                                    <a asp-action="Detail" asp-route-id="@item.Id"><button class="btn"><i class="bi bi-eye-fill"></i>Show Detail</button></a>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <!-- Assuming there's a controller named 'Orders' with an action named 'AddItemToShoppingCart' -->
+                                        <a asp-controller="Orders"
+                                           asp-action="AddItemToShoppingCart"
+                                           asp-route-id="@item.Id"><button class="btn"><i class="bi bi-cart-plus"></i>Add To Card</button></a>
+                                    }
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
+    </div>
     
-</div>
+</body>
+</html>

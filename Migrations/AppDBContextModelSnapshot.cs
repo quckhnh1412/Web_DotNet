@@ -66,6 +66,62 @@ namespace HouseBuying.Migrations
                             Province = "HCMC",
                             Street = "Lê Văn Lương",
                             Ward = "Tân Phong"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            District = "Quận 1",
+                            Province = "HCMC",
+                            Street = "Nguyễn Thị Minh Khai",
+                            Ward = "Phường 5"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            District = "Quận 7",
+                            Province = "HCMC",
+                            Street = "Số 15",
+                            Ward = "KDC Midtown"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            District = "Quận 7",
+                            Province = "HCMC",
+                            Street = "Số 30",
+                            Ward = "KDT Phú Mỹ Hưng"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            District = "Quận Bình Tân",
+                            Province = "HCMC",
+                            Street = "Số 819 Hương Lộ",
+                            Ward = "Phường Bình Trị Đông"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            District = "Thủ Đức",
+                            Province = "HCMC",
+                            Street = "Số 7",
+                            Ward = "Phường An Lợi Đông"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            District = "Quận 1",
+                            Province = "HCMC",
+                            Street = "Số 90 Nguyễn Thị Minh Khai",
+                            Ward = "Phường 5"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            District = "Quận 3",
+                            Province = "HCMC",
+                            Street = "Số 280 Nam Kỳ Khởi Nghĩa",
+                            Ward = "Phường 8"
                         });
                 });
 
@@ -97,6 +153,9 @@ namespace HouseBuying.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Squarefoot")
+                        .HasColumnType("int");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -121,6 +180,7 @@ namespace HouseBuying.Migrations
                             Description = "A wonderful place to live",
                             ImageURL = "Beautiful_House.png",
                             Price = 250000m,
+                            Squarefoot = 3500,
                             Status = "AVAILABLE",
                             Title = "Beautiful House"
                         },
@@ -133,8 +193,100 @@ namespace HouseBuying.Migrations
                             Description = "Perfect for a small family",
                             ImageURL = "Cozy Cottage.png",
                             Price = 150000m,
+                            Squarefoot = 4500,
                             Status = "SOLD",
                             Title = "Cozy Cottage"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AddressId = 3,
+                            Bathrooms = 1,
+                            Bedrooms = 3,
+                            Description = "This modern glass house in Amagansett, New York, built in 2019 and represented by Yorgos Tsibiridis of Compass",
+                            ImageURL = "Modern House.jpg",
+                            Price = 380000m,
+                            Squarefoot = 5000,
+                            Status = "AVAILABLE",
+                            Title = "Modern House"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AddressId = 4,
+                            Bathrooms = 4,
+                            Bedrooms = 5,
+                            Description = "In a world full of so many different house styles, it can be a little challenging just to narrow down your own home’s architectural style, let alone edit the list down to your favorite style or understand the distinctions characteristic to each house style",
+                            ImageURL = "Smart House.jpg",
+                            Price = 700000m,
+                            Squarefoot = 8000,
+                            Status = "AVAILABLE",
+                            Title = "Smart House"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AddressId = 5,
+                            Bathrooms = 2,
+                            Bedrooms = 3,
+                            Description = "Architectural styles refers to historically derived house design categories, from Traditional to Modern. Our design style groupings are intended to reflect common use.",
+                            ImageURL = "House CountrySide.jpg",
+                            Price = 470000m,
+                            Squarefoot = 3900,
+                            Status = "AVAILABLE",
+                            Title = "House CountrySide"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AddressId = 6,
+                            Bathrooms = 5,
+                            Bedrooms = 6,
+                            Description = "The lower level offers a secluded guest or in-law suite with a full bath, walk-in closet, and kitchen. A rec room, large family room, and exercise room on the lower level add function and convenience.",
+                            ImageURL = "Spacious House.jpg",
+                            Price = 1000000m,
+                            Squarefoot = 9000,
+                            Status = "SOLD",
+                            Title = "Spacious House"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AddressId = 7,
+                            Bathrooms = 3,
+                            Bedrooms = 4,
+                            Description = "The home’s form is defined by two gabled pavilions that sit perpendicular to one another, “separated and inflected to create interstitial spaces between,” the architect said.",
+                            ImageURL = "South House.jpg",
+                            Price = 550000m,
+                            Squarefoot = 6000,
+                            Status = "AVAILABLE",
+                            Title = "South House"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AddressId = 8,
+                            Bathrooms = 3,
+                            Bedrooms = 3,
+                            Description = "The ground floor is conceived as a singular volume with a central stair flanked by joinery defining public living spaces from private study and rumpus. ",
+                            ImageURL = "BWA House.jpg",
+                            Price = 300000m,
+                            Squarefoot = 3500,
+                            Status = "SOLD",
+                            Title = "BWA House"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AddressId = 9,
+                            Bathrooms = 3,
+                            Bedrooms = 4,
+                            Description = "Looking to build your dream home without breaking the bank? You’re in luck! Our inexpensive house plans to build offer loads of style, functionality, and most importantly, affordability.",
+                            ImageURL = "White House.jpg",
+                            Price = 600000m,
+                            Squarefoot = 5500,
+                            Status = "AVAILABLE",
+                            Title = "White House"
                         });
                 });
 

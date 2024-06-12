@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    vertical-align: middle;
+    height: calc(100vh - 80px);
+}
+
+    .login-wrapper .login-box {
+        margin: auto;
+        width: 100%;
+        margin: 0;
+        max-width: 600px;
+    }
+
+        .login-wrapper .login-box .login-info .login-desc h1 {
+            margin: 0 0 32px;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .form-group {
+            margin-bottom: 20px;
+        }
+
+
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group .form-label {
+                margin: 0 0 5px 0;
+                font-weight: 400;
+                color: #0E0E46;
+                display: block;
+                text-align: left;
+            }
+
+                .login-wrapper .login-box .login-info .login-desc .form-login .form-group .form-label span {
+                    color: red;
+                }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group input {
+                font-size: 14px;
+                background: #F6F6F9;
+                border: 1px solid #f4f4f4;
+                border-radius: 5px;
+                color: #0E0E46;
+                min-height: 50px;
+                margin: 0;
+                padding: 9px 15px;
+            }
+.login-wrapper .login-box .login-info .login-desc .form-login #btn-reset-pass {
+    background-color: #c0954f;
+    transition:all .5s;
+}
+
+    .login-wrapper .login-box .login-info .login-desc .form-login #btn-reset-pass:hover {
+        background-color: #fff;
+        border-color: #c0954f;
+    }

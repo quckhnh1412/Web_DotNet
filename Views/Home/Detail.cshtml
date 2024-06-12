@@ -4,74 +4,138 @@
     ViewData["Title"] = "Detail";
 }
 
-<h1>Detail</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Site</title>
+    
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/detail.css" />
+</head>
+<body>
+    <div class="detail-house container my-5">
+        <div class="row align-items-center page-head">
+            <div class="col-lg-8">
+                <div class="view-detail">
+                    <p class="detail-item">Detail</p>
+                </div>
+                <div class="page-title">
+                    <h3>@Html.DisplayFor(model => model.Title)</h3>
+                    <p class="pt-2">
+                        <i class="fa fa-map-marker-alt ms-1"></i>
+                    @Model.Address.Street, @Model.Address.Ward, @Model.Address.District, @Model.Address.Province
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-right">
+                <div class="latest-update">
+                    <p></p>
+                    
+                    <p>$@Html.DisplayFor(model => model.Price)</p>
+                    <div class="other-pages d-flex justify-content-end pt-2">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Assuming there's a controller named 'Orders' with an action named 'AddItemToShoppingCart' -->
+                            <a asp-controller="Orders"
+                               asp-action="AddItemToShoppingCart"
+                               asp-route-id="@Model.Id">><i class="fa fa-shopping-cart"></i> Add To Card</a>
+                            
+                        }
+                        <a class="m-0" asp-action="Index"><i class="fa fa-backward"></i> Back To Home</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-lg-8 col-md-12 col-xs-12 detail-left-top">
+                <img style="max-width: 1000px"
+                     
+                     src="/Images/@Html.DisplayFor(model => model.ImageURL)"
+                     class="w-100"
+                     alt="" />
+            </div>
+            <div class="col-lg-4 col-md-12 detail-right">
+                <div class="sidebar-card">
+                    <div class="sidebar-card-title">
+                        <h4 class="pb-2">Contact</h4>
+                    </div>
 
-<div>
-    <h4>House</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Bedrooms)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Bedrooms)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Bathrooms)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Bathrooms)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address) 
-            
-            
-        </dt>
-        <dd class="col-sm-10">
-            <p>@Model.Address.Street, @Model.Address.Ward, @Model.Address.District, @Model.Address.Province </p>
-        </dd>
-    </dl>
-</div>
-<div>
-    @if (User.Identity.IsAuthenticated)
-    {
-        <!-- Assuming there's a controller named 'Orders' with an action named 'AddItemToShoppingCart' -->
-        <a class="btn btn-success text-white"
-           asp-controller="Orders"
-           asp-action="AddItemToShoppingCart"
-           asp-route-id="@Model.Id">
-            <i class="bi bi-cart-plus"></i> Add to Cart
-        </a>
-    }
-    <a asp-action="Index">Back to List</a>
-</div>
+                    <form action="#">
+                        <div class="review-form">
+                            <input type="text"
+                                   class="form-control my-3"
+                                   placeholder="Your Name" />
+                        </div>
+                        <div class="review-form">
+                            <input type="email"
+                                   class="form-control mb-3"
+                                   placeholder="Your Email" />
+                        </div>
+                        <div class="review-form">
+                            <input type="text"
+                                   class="form-control mb-3"
+                                   placeholder="Your Phone Number" />
+                        </div>
+                        <div class="review-form">
+                            <textarea rows="5" placeholder="Yes, I'm Interested"></textarea>
+                        </div>
+                        <div class="review-form submit-btn">
+                            <button type="submit" class="btn-primary w-100 my-3">
+                                Send Email
+                            </button>
+                        </div>
+                    </form>
+                    <ul class="connect-us d-flex justify-content-between p-0 my-3">
+                        <li>
+                            <a href="#"><i class="fa fa-phone"></i> Call Us</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="collapse-card">
+                <h4 class="card-title mb-3">Overview</h4>
+                <div class="card-collapse">
+                    <ul class="property-overview d-flex justify-content-between text-center px-3">
+                        <li>
+                            <i class="fa fa-bed"></i>
+                            <p>@Html.DisplayFor(model => model.Bedrooms) Beds</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-bath"></i>
+                            <p>@Html.DisplayFor(model => model.Bathrooms) Baths</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-building"></i>
+                            <p> @Html.DisplayFor(model => model.Squarefoot) Sqft</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-seedling"></i>
+                            <p> @Html.DisplayFor(model => model.Status)</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="detail-left-bottom">
+                <p>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+            </div>
+        </div>
+    </div>
+
+  
+   
+</body>
+</html>
+

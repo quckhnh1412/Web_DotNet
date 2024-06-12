@@ -156,12 +156,12 @@ namespace HouseBuying.Controllers
                     return NotFound();
                 }
 
-                if (ModelState.IsValid)
-                {
+           
+                
                     _context.Update(house);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
-                }
+                
 
                 ViewData["AddressId"] = new SelectList(_context.Addresses, "Id", "Id", house.AddressId);
                 return View(house);

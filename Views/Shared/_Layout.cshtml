@@ -11,10 +11,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container p-2">
                 <!-- Branding -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HouseBuying</a>
+                
 
                 <!-- Mobile Toggle Button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -27,12 +28,12 @@
                     <!-- Left-aligned Menu Items -->
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Houses</a>
+                            <a class="nav-link item-header text-dark" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Home</a>
                         </li>
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link item-header dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-gear"></i> Management
                                 </a>
                                 <ul class="dropdown-menu">
@@ -57,7 +58,7 @@
              
                     <form class="d-flex" role="search" asp-controller="Home" asp-action="Filter">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchString">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-search " type="submit">Search</button>
                     </form>
                     <ul class="navbar-nav">
                         @await Component.InvokeAsync("ShoppingCartSummary")
@@ -67,7 +68,7 @@
             <partial name="_LoginPartial"/>
         </nav>
     </header>
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

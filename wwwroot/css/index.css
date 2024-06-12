@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#navbarTogglerDemo01 .logo {
+    width: 100px;
+    height: 100px;
+    max-width: 200px;
+}
+
+#navbarTogglerDemo01 .btn {
+    min-width: 95px;
+    padding: 10px 10px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+#navbarTogglerDemo01 .sign-in {
+    background-color: #F6F6F9;
+    border: 1px solid #F6F6F9;
+    color: #8A909A;
+    box-shadow: inset 0 0 0 0 #c0954f;
+    transition: 0.5s;
+}
+
+    #navbarTogglerDemo01 .sign-in:hover {
+        color: #FFF;
+        background-color: #c0954f;
+        border-color: #c0954f;
+        box-shadow: inset 0 50px 0 0 #c0954f;
+        transition: 0.5s;
+    }
+
+#carouselExampleDark .carousel-inner .carousel-item .carousel-caption {
+    display: inline-block;
+    text-shadow: none;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(36, 42, 53, 0.4);
+}
+
+    #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info {
+        align-self: center;
+    }
+
+        #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info h1 {
+            margin-bottom: 20px;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: normal;
+        }
+
+        #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info p {
+            line-height: 1.8;
+            letter-spacing: 1px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info .btn-section .btn-lg {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+            #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info .btn-section .btn-lg:hover {
+                color: #fff;
+                background-color: #c0954f;
+                border-color: #c0954f;
+                transition: 0.5s;
+            }
+
+        #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info .btn-section .btn-theme {
+            background: #c0954f;
+            border: solid 1px #c0954f;
+        }
+
+            #carouselExampleDark .carousel-inner .carousel-item .carousel-caption .caption-info .btn-section .btn-theme:hover {
+                background: transparent;
+                border-color: #fff;
+            }
+
+.house-list .list-item .product-list .item .card-body .card-star-status {
+    padding: 10px 0;
+}
+
+    .house-list .list-item .product-list .item .card-body .card-star-status .item-star i {
+        color: #c0954f;
+    }
+
+    .house-list .list-item .product-list .item .card-body .card-star-status .status span {
+        border: solid 1 #c0954f;
+        background: #c0954f;
+        border-radius: 5px;
+        padding: 8px 15px;
+    }
+
+.house-list .list-item .product-list .item .card-body .item-title {
+    padding-bottom: 10px;
+}
+
+    .house-list .list-item .product-list .item .card-body .item-title p {
+        color: #c0954f;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+.house-list .list-item .product-list .item .card-body .item-address p {
+    color: #8A909A;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+    .house-list .list-item .product-list .item .card-body .item-address p i {
+        padding-right: 5px;
+    }
+
+.house-list .list-item .product-list .item .card-body .item-info ul {
+    margin: 0 0 20px;
+    padding: 20px 20px 15px;
+    background-color: #F7F6FF;
+    font-size: 16px;
+    align-items: center;
+    list-style: none;
+}
+
+    .house-list .list-item .product-list .item .card-body .item-info ul li i {
+        color: #c0954f;
+    }
+
+.house-list .list-item .product-list .item .card-body .button-card button {
+    background-color: #c0954f;
+    transition: all 0.5s;
+    padding: 10px 35px;
+}
+
+    .house-list .list-item .product-list .item .card-body .button-card button:hover {
+        background-color: #fff;
+        border-color: #c0954f;
+    }

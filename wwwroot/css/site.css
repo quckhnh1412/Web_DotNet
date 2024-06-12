@@ -16,3 +16,61 @@ html {
 body {
   margin-bottom: 60px;
 }
+.btn-search {
+    background-color: #c0954f;
+    color: #fff;
+    transition: all .5s;
+}
+    .btn-search:hover {
+        background-color: transparent;
+        border-color: #c0954f;
+        color: #000;
+    }
+.user-name{
+    transition:all .5s;
+}
+    .user-name:hover {
+        text-decoration: underline;
+        
+    }
+.item-header {
+    transition: all .5s;
+}
+    .item-header:hover {
+        text-decoration: underline;
+       
+    }
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link .nav-item-css {
+    background-color: #c0954f;
+
+}
+.nav-pills .nav-link, .nav-pills .show > .nav-link .nav-item-css{
+    color: black;
+}
+    .nav-pills .nav-link:hover, .nav-pills .show > .nav-link .nav-item-css:hover {
+        background-color: #c0954f;
+        color: #fff;
+    }
+
+.form-control {
+    font-size: 14px;
+    background: #F6F6F9;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    color: #0E0E46;
+    min-height: 50px;
+    margin: 0;
+    padding: 9px 15px;
+    
+}
+#update-profile-button, #change-email-button, #btn-update-password, .btn-create-new-item {
+    background-color: #c0954f;
+    color: #fff;
+    transition: all .5s;
+}
+    #update-profile-button:hover, #change-email-button:hover, #btn-update-password:hover, .btn-create-new-item:hover {
+        background-color: transparent;
+        border-color: #c0954f;
+        color: #000;
+    }
+

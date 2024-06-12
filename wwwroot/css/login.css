@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    vertical-align: middle;
+    height: calc(100vh - 80px);
+}
+
+    .login-wrapper .login-box {
+        margin: auto;
+        width: 100%;
+        margin: 0;
+        max-width: 600px;
+    }
+
+        .login-wrapper .login-box .login-info .login-desc h1 {
+            margin: 0 0 32px;
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .form-group {
+            margin-bottom: 20px;
+        }
+
+        
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .form-group .form-label {
+            margin: 0 0 5px 0;
+            font-weight: 400;
+            color: #0E0E46;
+            display: block;
+            text-align: left;
+        }
+
+                .login-wrapper .login-box .login-info .login-desc .form-login .form-group .form-label span {
+                    color: red;
+                }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group input {
+                font-size: 14px;
+                background: #F6F6F9;
+                border: 1px solid #f4f4f4;
+                border-radius: 5px;
+                color: #0E0E46;
+                min-height: 50px;
+                margin: 0;
+                padding: 9px 15px;
+            }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group .pass-group {
+                position: relative;
+            }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group i {
+                position: absolute;
+                right: 17px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group .forgot-link {
+                color: #FD3358;
+                font-weight: 500;
+                font-size: 15px;
+                float: right;
+            }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .form-group .custom-check {
+                display: flex;
+                align-items: center;
+                margin: 20px 0 0;
+                color: #8A909A;
+                font-size: 14px;
+                cursor: pointer;
+                font-weight: 400;
+                user-select: none;
+            }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .btn-size {
+            padding: 18px 10px;
+            line-height: 23px;
+            font-weight: 700;
+            color: #FFF;
+            background-color: #c0954f;
+            border: 1px solid #c0954f;
+        }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .btn-size:hover {
+                background-color: #fff;
+                border: 1px solid #c0954f;
+                color: #000;
+                transition: all 0.5s;
+            }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .login-or {
+            color: #FFF;
+            margin: 30px auto;
+            padding: 0 0 30px;
+            position: relative;
+            max-width: 385px;
+            overflow: hidden;
+        }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .login-or .span-or-log {
+                color: #828282;
+                font-size: 14px;
+                font-weight: 500;
+                display: block;
+                left: 25%;
+                position: absolute;
+                text-align: center;
+                top: 6px;
+                width: 200px;
+            }
+
+                .login-wrapper .login-box .login-info .login-desc .form-login .login-or .span-or-log::after {
+                    width: 95px;
+                    content: "";
+                    border-top: 1px solid #EDECF8;
+                    position: absolute;
+                    top: 50%;
+                    right: -95px;
+                }
+
+                .login-wrapper .login-box .login-info .login-desc .form-login .login-or .span-or-log::before {
+                    width: 95px;
+                    content: "";
+                    border-top: 1px solid #EDECF8;
+                    position: absolute;
+                    top: 50%;
+                    left: -95px;
+                }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .social-login a {
+            background: #FFF;
+            border: 1px solid #FFF;
+            box-shadow: inset 0 0 0 0 #FFF;
+            text-align: center;
+            margin: 0 0 10px;
+            padding: 10px 0;
+            line-height: 20px;
+            color: #8A909A;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .social-login a span {
+                padding-right: 10px;
+            }
+
+        .login-wrapper .login-box .login-info .login-desc .form-login .dont-have {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 25px 0 0;
+            color: #8A909A;
+        }
+
+            .login-wrapper .login-box .login-info .login-desc .form-login .dont-have a {
+                color: #FD3358;
+                font-weight: 500;
+            }
